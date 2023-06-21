@@ -1,0 +1,40 @@
+.form{
+  display: flex;
+  align-items: center;
+
+  max-width: 400px;
+  margin: 0 auto;
+  height: 100vh;
+}
+.container{
+  padding: 60px 50px;
+
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.form_password{
+  margin-top: 30px;
+  width: 100%;
+}
+.form_text{
+  text-align: center;
+
+  font-weight: 800;
+  font-size: 18px;
+}
+.form_indicator{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+.indicator{
+  display: block;
+  height: 12px;
+  width: 30%;
+
+  border-radius: 5px;
+
+  border: 1px solid black;
+}
+
+
