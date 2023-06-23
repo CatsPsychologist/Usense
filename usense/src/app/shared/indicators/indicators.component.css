@@ -1,0 +1,15 @@
+.form_indicator{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+.indicator{
+  display: block;
+  height: 12px;
+  width: 30%;
+
+  border-radius: 5px;
+
+  border: 1px solid black;
+}
+
