@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {debounceTime, Subscription} from "rxjs";
 import {PasswordStrengthService} from "../shared/services/password-strength.service";
 
@@ -10,7 +10,8 @@ import {PasswordStrengthService} from "../shared/services/password-strength.serv
 })
 export class FormComponent {
 
-  public formControl: FormControl = new FormControl();
+  public form: FormGroup;
+
   public formText: string = 'Please, type your password to make sure it\'s enough secure';
   public firstIndicator: string = '#cecece';
   public secondIndicator: string = '#cecece';
@@ -22,12 +23,13 @@ export class FormComponent {
 
   constructor(
     private passwordService: PasswordStrengthService,
+    private formBuilder: FormBuilder,
   ) {}
 
   ngOnInit(){
+    this.buildForm();
 
-    this._subscription = this.formControl.valueChanges
-      .pipe(
+    this.form.controls['password'].valueChanges .pipe(
         debounceTime(250)
       ).subscribe(inputValue => {
 
@@ -38,6 +40,13 @@ export class FormComponent {
         this.thirdIndicator = this.indicatorArr[2];
 
       })
+
+  }
+
+  buildForm() {
+    this.form = this.formBuilder.group({
+      password: new FormControl('')
+    })
   }
 
   ngOnDestroy(){
