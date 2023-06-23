@@ -1,12 +1,9 @@
 <div class="form">
-  <div class="container">
     <p class="form_text">Please, type your password to make sure it's enough secure</p>
-
     <input type="password"
            class="form_password"
            [formControl]="inputForm"
     >
-
     <div class="form_indicator">
       <span
         [ngStyle]="{'background-color' : firstIndicator}"
@@ -18,7 +15,6 @@
         [ngStyle]="{'background-color' : thirdIndicator}"
         class="indicator"></span>
     </div>
-  </div>
 </div>
 
 

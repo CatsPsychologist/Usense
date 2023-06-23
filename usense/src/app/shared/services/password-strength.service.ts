@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class PasswordStrengthService {
 
-  public passwordStrength: number = 1;
   public firstIndicator: string = '#cecece';
   public secondIndicator: string = '#cecece';
   public thirdIndicator: string = '#cecece';
